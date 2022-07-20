@@ -38,16 +38,17 @@ export default {
       })
         .then((AMap) => {
           // 创建一个 Marker 实例：
-          // var marker = new AMap.Marker({
-          //     position: new AMap.LngLat(116.39, 39.9),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
-          //     title: '北京'
-          // });
+          var marker = new AMap.Marker({
+              position: new AMap.LngLat(116.39, 39.9),   // 经纬度对象，也可以是经纬度构成的一维数组[116.39, 39.9]
+              title: '北京'
+          });
           this.map = new AMap.Map("container", {
             //设置地图容器id
             viewMode: "3D", //是否为3D地图模式
             zoom: 5, //初始化地图级别
             center: [105.602725, 37.076636], //初始化地图中心点位置
           });
+          this.map.add(marker);
         })
         .catch((e) => {
           console.log(e);
